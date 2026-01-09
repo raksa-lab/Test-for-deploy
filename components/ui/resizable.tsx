@@ -2,19 +2,19 @@
 
 import * as React from 'react'
 import { GripVerticalIcon } from 'lucide-react'
-import { PanelContainer, Panel, ResizeHandle } from 'react-resizable-panels'
+import { Group as PanelGroup, Panel, Separator as ResizeHandle } from 'react-resizable-panels'
 import { cn } from '@/lib/utils'
 
-export function ResizablePanelGroup({ className, ...props }: React.ComponentProps<typeof PanelContainer>) {
+export function ResizablePanelGroup({ className, ...props }: React.ComponentProps<any>) {
   return (
-    <PanelContainer
+    <PanelGroup
       className={cn('flex h-full w-full flex-col', className)}
       {...props}
     />
   )
 }
 
-export function ResizablePanel({ ...props }: React.ComponentProps<typeof Panel>) {
+export function ResizablePanel({ ...props }: React.ComponentProps<any>) {
   return <Panel {...props} />
 }
 
@@ -22,7 +22,7 @@ export function ResizableHandle({
   withHandle,
   className,
   ...props
-}: React.ComponentProps<typeof ResizeHandle> & { withHandle?: boolean }) {
+}: React.ComponentProps<any> & { withHandle?: boolean }) {
   return (
     <ResizeHandle
       className={cn(
